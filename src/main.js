@@ -15,8 +15,6 @@ function handleSearchSubmit(event) {
   const form = event.currentTarget;
   const query = form.elements['search-text'].value.trim();
 
-  clearGallery();
-
   if (query === '') {
     iziToast.warning({
       title: 'Caution',
@@ -25,6 +23,8 @@ function handleSearchSubmit(event) {
     });
     return;
   }
+
+   clearGallery();
 
   showLoader();
 
